@@ -1,0 +1,14 @@
+﻿<Window x:Class="AvtorizationTns.Views.Windows.WinCode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AvtorizationTns.Views.Windows"
+        mc:Ignorable="d"
+        Title="WinCode" Height="300" Width="400">
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox Name="txbCode" Width="270" Height="40" FontSize="30" FontWeight="Bold"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,37 @@
+﻿<Window x:Class="AvtorizationTns.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AvtorizationTns"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="340" Width="600">
+    <Grid>
+        <TextBlock Text="Телеком Нева Связь" FontSize="30" Margin="30"></TextBlock>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Image Source="/Resource/logo.jpg" Width="150"></Image>
+
+        </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="50" Text="Номер:"></TextBlock>
+                <TextBox Name="txbLogin" Width="200" KeyDown="txbLogin_KeyDown"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0" >
+                <TextBlock Width="50" Text="Пароль:"></TextBlock>
+                <TextBox Name="txbPassword" Width="200" KeyDown="txbPassword_KeyDown"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <TextBlock Text="Код:" Width="50"></TextBlock>
+                <TextBox Name="txbCode" Width="170"  TextChanged="txbCode_TextChanged" Margin="0" ></TextBox>
+                <Button Name="DwnBtn" Click="DwnBtn_Click" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}" Margin="5,0,0,0">
+                    <Image Source="/Resource/download.png" Height="20" Width="20"></Image>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20,0,0,20">
+            <Button Name="CancelBtn" Click="CancelBtn_Click" Content="Отмена" Width="70"></Button>
+            <Button Name="LoginBtn" Click="LoginBtn_Click" Content="Войти" Width="70"  Margin="20,0,0,0"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3ea879ce4b154ce9997099b91ccc201b" Name="Diagram1">
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.AbonentEqupment" Width="1.5" PointX="5.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.Employee" Width="1.5" PointX="13" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.EqupmentMagistral" Width="1.5" PointX="2.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.Gender" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.Request" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.Role" Width="1.5" PointX="10.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.SetiDostupa" Width="1.5" PointX="2.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.SPB" Width="1.5" PointX="10" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.Status" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.TypeOfBuilding" Width="1.5" PointX="7.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.TypeOfDogovor" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.TypeOfProblem" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.TypeOfServices" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.VidOfServices" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TelecomNevaSvyazModel.Abonents" Width="1.5" PointX="8" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="TelecomNevaSvyazModel.FK_Abonents_AbonentEqupment" ManuallyRouted="false" />
+        <AssociationConnector Association="TelecomNevaSvyazModel.FK_Employee_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="TelecomNevaSvyazModel.FK_Abonents_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="TelecomNevaSvyazModel.FK_Request_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="TelecomNevaSvyazModel.FK_Request_TypeOfProblem" ManuallyRouted="false" />
+        <AssociationConnector Association="TelecomNevaSvyazModel.FK_Request_TypeOfServices" ManuallyRouted="false" />
+        <AssociationConnector Association="TelecomNevaSvyazModel.FK_Request_VidOfServices" ManuallyRouted="false" />
+        <AssociationConnector Association="TelecomNevaSvyazModel.FK_SPB_TypeOfBuilding" ManuallyRouted="false" />
+        <AssociationConnector Association="TelecomNevaSvyazModel.FK_Abonents_TypeOfDogovor" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

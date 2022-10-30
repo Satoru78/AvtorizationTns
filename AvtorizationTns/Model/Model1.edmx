@@ -1,0 +1,918 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище TelecomNevaSvyazModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AbonentEqupment">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "TelecomNevaSvyaz.dbo.Abonents" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Abonents">
+          <Key>
+            <PropertyRef Name="NumberAbonent" />
+            <PropertyRef Name="FIO" />
+            <PropertyRef Name="IDGender" />
+            <PropertyRef Name="DateOfBirth" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="AdressPropiski" />
+            <PropertyRef Name="Adress" />
+            <PropertyRef Name="SerialAndNumber" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Issue" />
+            <PropertyRef Name="DateOfIssue" />
+            <PropertyRef Name="NumberOfDogovor" />
+            <PropertyRef Name="DateOfStart" />
+            <PropertyRef Name="IDTypeOfDogovor" />
+            <PropertyRef Name="PersonalAccount" />
+            <PropertyRef Name="Services" />
+            <PropertyRef Name="IDAbonentEqupment" />
+          </Key>
+          <Property Name="NumberAbonent" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDGender" Type="int" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdressPropiski" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SerialAndNumber" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Issue" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateOfIssue" Type="date" Nullable="false" />
+          <Property Name="NumberOfDogovor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfStart" Type="date" Nullable="false" />
+          <Property Name="IDTypeOfDogovor" Type="int" Nullable="false" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="150" />
+          <Property Name="PersonalAccount" Type="int" Nullable="false" />
+          <Property Name="Services" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfEnd" Type="date" />
+          <Property Name="IDAbonentEqupment" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="IDRole" Type="int" Nullable="false" />
+          <Property Name="Code" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EqupmentMagistral">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NumberRequest" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfCreate" Type="date" Nullable="false" />
+          <Property Name="PersonalAccount" Type="int" Nullable="false" />
+          <Property Name="IDVidOfServices" Type="int" Nullable="false" />
+          <Property Name="IDTypeOfServices" Type="int" Nullable="false" />
+          <Property Name="IDStatus" Type="int" Nullable="false" />
+          <Property Name="TypeOfEqupment" Type="nvarchar" MaxLength="50" />
+          <Property Name="DescriptionProblem" Type="nvarchar" MaxLength="100" />
+          <Property Name="DateOfEnd" Type="date" />
+          <Property Name="IDTypeOfProblem" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Information" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SetiDostupa">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SPB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ploshad" Type="decimal" Precision="12" Scale="6" Nullable="false" />
+          <Property Name="Naselenie" Type="int" Nullable="false" />
+          <Property Name="CountOfAnderground" Type="int" Nullable="false" />
+          <Property Name="IDTypeOfBuilding" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypeOfBuilding">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeOfDogovor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeOfProblem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeOfServices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VidOfServices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Abonents_AbonentEqupment">
+          <End Role="AbonentEqupment" Type="Self.AbonentEqupment" Multiplicity="1" />
+          <End Role="Abonents" Type="Self.Abonents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbonentEqupment">
+              <PropertyRef Name="SerialNumber" />
+            </Principal>
+            <Dependent Role="Abonents">
+              <PropertyRef Name="IDAbonentEqupment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Abonents_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Abonents" Type="Self.Abonents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Abonents">
+              <PropertyRef Name="IDGender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Abonents_TypeOfDogovor">
+          <End Role="TypeOfDogovor" Type="Self.TypeOfDogovor" Multiplicity="1" />
+          <End Role="Abonents" Type="Self.Abonents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfDogovor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Abonents">
+              <PropertyRef Name="IDTypeOfDogovor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="IDStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_TypeOfProblem">
+          <End Role="TypeOfProblem" Type="Self.TypeOfProblem" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfProblem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="IDTypeOfProblem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_TypeOfServices">
+          <End Role="TypeOfServices" Type="Self.TypeOfServices" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfServices">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="IDTypeOfServices" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_VidOfServices">
+          <End Role="VidOfServices" Type="Self.VidOfServices" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VidOfServices">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="IDVidOfServices" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SPB_TypeOfBuilding">
+          <End Role="TypeOfBuilding" Type="Self.TypeOfBuilding" Multiplicity="1" />
+          <End Role="SPB" Type="Self.SPB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfBuilding">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SPB">
+              <PropertyRef Name="IDTypeOfBuilding" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище TelecomNevaSvyazModelContainer">
+          <EntitySet Name="AbonentEqupment" EntityType="Self.AbonentEqupment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EqupmentMagistral" EntityType="Self.EqupmentMagistral" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SetiDostupa" EntityType="Self.SetiDostupa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SPB" EntityType="Self.SPB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeOfBuilding" EntityType="Self.TypeOfBuilding" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeOfDogovor" EntityType="Self.TypeOfDogovor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeOfProblem" EntityType="Self.TypeOfProblem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeOfServices" EntityType="Self.TypeOfServices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VidOfServices" EntityType="Self.VidOfServices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Abonents" EntityType="Self.Abonents" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Abonents].[NumberAbonent] AS [NumberAbonent], 
+    [Abonents].[FIO] AS [FIO], 
+    [Abonents].[IDGender] AS [IDGender], 
+    [Abonents].[DateOfBirth] AS [DateOfBirth], 
+    [Abonents].[Phone] AS [Phone], 
+    [Abonents].[Email] AS [Email], 
+    [Abonents].[AdressPropiski] AS [AdressPropiski], 
+    [Abonents].[Adress] AS [Adress], 
+    [Abonents].[SerialAndNumber] AS [SerialAndNumber], 
+    [Abonents].[Code] AS [Code], 
+    [Abonents].[Issue] AS [Issue], 
+    [Abonents].[DateOfIssue] AS [DateOfIssue], 
+    [Abonents].[NumberOfDogovor] AS [NumberOfDogovor], 
+    [Abonents].[DateOfStart] AS [DateOfStart], 
+    [Abonents].[IDTypeOfDogovor] AS [IDTypeOfDogovor], 
+    [Abonents].[Reason] AS [Reason], 
+    [Abonents].[PersonalAccount] AS [PersonalAccount], 
+    [Abonents].[Services] AS [Services], 
+    [Abonents].[DateOfEnd] AS [DateOfEnd], 
+    [Abonents].[IDAbonentEqupment] AS [IDAbonentEqupment]
+    FROM [dbo].[Abonents] AS [Abonents]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Abonents_AbonentEqupment" Association="Self.FK_Abonents_AbonentEqupment">
+            <End Role="AbonentEqupment" EntitySet="AbonentEqupment" />
+            <End Role="Abonents" EntitySet="Abonents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Abonents_Gender" Association="Self.FK_Abonents_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Abonents" EntitySet="Abonents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Abonents_TypeOfDogovor" Association="Self.FK_Abonents_TypeOfDogovor">
+            <End Role="TypeOfDogovor" EntitySet="TypeOfDogovor" />
+            <End Role="Abonents" EntitySet="Abonents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Role" Association="Self.FK_Employee_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Status" Association="Self.FK_Request_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_TypeOfProblem" Association="Self.FK_Request_TypeOfProblem">
+            <End Role="TypeOfProblem" EntitySet="TypeOfProblem" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_TypeOfServices" Association="Self.FK_Request_TypeOfServices">
+            <End Role="TypeOfServices" EntitySet="TypeOfServices" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_VidOfServices" Association="Self.FK_Request_VidOfServices">
+            <End Role="VidOfServices" EntitySet="VidOfServices" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SPB_TypeOfBuilding" Association="Self.FK_SPB_TypeOfBuilding">
+            <End Role="TypeOfBuilding" EntitySet="TypeOfBuilding" />
+            <End Role="SPB" EntitySet="SPB" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TelecomNevaSvyazModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AbonentEqupment">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Abonents" Relationship="Self.FK_Abonents_AbonentEqupment" FromRole="AbonentEqupment" ToRole="Abonents" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDRole" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Employee_Role" FromRole="Employee" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="EqupmentMagistral">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Abonents" Relationship="Self.FK_Abonents_Gender" FromRole="Gender" ToRole="Abonents" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NumberRequest" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfCreate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PersonalAccount" Type="Int32" Nullable="false" />
+          <Property Name="IDVidOfServices" Type="Int32" Nullable="false" />
+          <Property Name="IDTypeOfServices" Type="Int32" Nullable="false" />
+          <Property Name="IDStatus" Type="Int32" Nullable="false" />
+          <Property Name="TypeOfEqupment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DescriptionProblem" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfEnd" Type="DateTime" Precision="0" />
+          <Property Name="IDTypeOfProblem" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Request_Status" FromRole="Request" ToRole="Status" />
+          <NavigationProperty Name="TypeOfProblem" Relationship="Self.FK_Request_TypeOfProblem" FromRole="Request" ToRole="TypeOfProblem" />
+          <NavigationProperty Name="TypeOfServices" Relationship="Self.FK_Request_TypeOfServices" FromRole="Request" ToRole="TypeOfServices" />
+          <NavigationProperty Name="VidOfServices" Relationship="Self.FK_Request_VidOfServices" FromRole="Request" ToRole="VidOfServices" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Role1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Information" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Role" FromRole="Role" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="SetiDostupa">
+          <Key>
+            <PropertyRef Name="SerialNumber" />
+          </Key>
+          <Property Name="SerialNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SPB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ploshad" Type="Decimal" Precision="12" Scale="6" Nullable="false" />
+          <Property Name="Naselenie" Type="Int32" Nullable="false" />
+          <Property Name="CountOfAnderground" Type="Int32" Nullable="false" />
+          <Property Name="IDTypeOfBuilding" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TypeOfBuilding" Relationship="Self.FK_SPB_TypeOfBuilding" FromRole="SPB" ToRole="TypeOfBuilding" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_Request_Status" FromRole="Status" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TypeOfBuilding">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SPB" Relationship="Self.FK_SPB_TypeOfBuilding" FromRole="TypeOfBuilding" ToRole="SPB" />
+        </EntityType>
+        <EntityType Name="TypeOfDogovor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Abonents" Relationship="Self.FK_Abonents_TypeOfDogovor" FromRole="TypeOfDogovor" ToRole="Abonents" />
+        </EntityType>
+        <EntityType Name="TypeOfProblem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_Request_TypeOfProblem" FromRole="TypeOfProblem" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="TypeOfServices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_Request_TypeOfServices" FromRole="TypeOfServices" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="VidOfServices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_Request_VidOfServices" FromRole="VidOfServices" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Abonents">
+          <Key>
+            <PropertyRef Name="NumberAbonent" />
+            <PropertyRef Name="FIO" />
+            <PropertyRef Name="IDGender" />
+            <PropertyRef Name="DateOfBirth" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="AdressPropiski" />
+            <PropertyRef Name="Adress" />
+            <PropertyRef Name="SerialAndNumber" />
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Issue" />
+            <PropertyRef Name="DateOfIssue" />
+            <PropertyRef Name="NumberOfDogovor" />
+            <PropertyRef Name="DateOfStart" />
+            <PropertyRef Name="IDTypeOfDogovor" />
+            <PropertyRef Name="PersonalAccount" />
+            <PropertyRef Name="Services" />
+            <PropertyRef Name="IDAbonentEqupment" />
+          </Key>
+          <Property Name="NumberAbonent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FIO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDGender" Type="Int32" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Phone" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdressPropiski" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SerialAndNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Issue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfIssue" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NumberOfDogovor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfStart" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDTypeOfDogovor" Type="Int32" Nullable="false" />
+          <Property Name="Reason" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PersonalAccount" Type="Int32" Nullable="false" />
+          <Property Name="Services" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfEnd" Type="DateTime" Precision="0" />
+          <Property Name="IDAbonentEqupment" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AbonentEqupment" Relationship="Self.FK_Abonents_AbonentEqupment" FromRole="Abonents" ToRole="AbonentEqupment" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_Abonents_Gender" FromRole="Abonents" ToRole="Gender" />
+          <NavigationProperty Name="TypeOfDogovor" Relationship="Self.FK_Abonents_TypeOfDogovor" FromRole="Abonents" ToRole="TypeOfDogovor" />
+        </EntityType>
+        <Association Name="FK_Abonents_AbonentEqupment">
+          <End Role="AbonentEqupment" Type="Self.AbonentEqupment" Multiplicity="1" />
+          <End Role="Abonents" Type="Self.Abonents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbonentEqupment">
+              <PropertyRef Name="SerialNumber" />
+            </Principal>
+            <Dependent Role="Abonents">
+              <PropertyRef Name="IDAbonentEqupment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Abonents_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Abonents" Type="Self.Abonents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Abonents">
+              <PropertyRef Name="IDGender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="IDStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_TypeOfProblem">
+          <End Role="TypeOfProblem" Type="Self.TypeOfProblem" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfProblem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="IDTypeOfProblem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_TypeOfServices">
+          <End Role="TypeOfServices" Type="Self.TypeOfServices" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfServices">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="IDTypeOfServices" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_VidOfServices">
+          <End Role="VidOfServices" Type="Self.VidOfServices" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VidOfServices">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="IDVidOfServices" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SPB_TypeOfBuilding">
+          <End Role="TypeOfBuilding" Type="Self.TypeOfBuilding" Multiplicity="1" />
+          <End Role="SPB" Type="Self.SPB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfBuilding">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SPB">
+              <PropertyRef Name="IDTypeOfBuilding" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Abonents_TypeOfDogovor">
+          <End Role="TypeOfDogovor" Type="Self.TypeOfDogovor" Multiplicity="1" />
+          <End Role="Abonents" Type="Self.Abonents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfDogovor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Abonents">
+              <PropertyRef Name="IDTypeOfDogovor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TelecomNevaSvyazEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AbonentEqupment" EntityType="Self.AbonentEqupment" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="EqupmentMagistral" EntityType="Self.EqupmentMagistral" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" />
+          <EntitySet Name="Request" EntityType="Self.Request" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="SetiDostupa" EntityType="Self.SetiDostupa" />
+          <EntitySet Name="SPB" EntityType="Self.SPB" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TypeOfBuilding" EntityType="Self.TypeOfBuilding" />
+          <EntitySet Name="TypeOfDogovor" EntityType="Self.TypeOfDogovor" />
+          <EntitySet Name="TypeOfProblem" EntityType="Self.TypeOfProblem" />
+          <EntitySet Name="TypeOfServices" EntityType="Self.TypeOfServices" />
+          <EntitySet Name="VidOfServices" EntityType="Self.VidOfServices" />
+          <EntitySet Name="Abonents" EntityType="Self.Abonents" />
+          <AssociationSet Name="FK_Abonents_AbonentEqupment" Association="Self.FK_Abonents_AbonentEqupment">
+            <End Role="AbonentEqupment" EntitySet="AbonentEqupment" />
+            <End Role="Abonents" EntitySet="Abonents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Role" Association="Self.FK_Employee_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Abonents_Gender" Association="Self.FK_Abonents_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Abonents" EntitySet="Abonents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Status" Association="Self.FK_Request_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_TypeOfProblem" Association="Self.FK_Request_TypeOfProblem">
+            <End Role="TypeOfProblem" EntitySet="TypeOfProblem" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_TypeOfServices" Association="Self.FK_Request_TypeOfServices">
+            <End Role="TypeOfServices" EntitySet="TypeOfServices" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_VidOfServices" Association="Self.FK_Request_VidOfServices">
+            <End Role="VidOfServices" EntitySet="VidOfServices" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SPB_TypeOfBuilding" Association="Self.FK_SPB_TypeOfBuilding">
+            <End Role="TypeOfBuilding" EntitySet="TypeOfBuilding" />
+            <End Role="SPB" EntitySet="SPB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Abonents_TypeOfDogovor" Association="Self.FK_Abonents_TypeOfDogovor">
+            <End Role="TypeOfDogovor" EntitySet="TypeOfDogovor" />
+            <End Role="Abonents" EntitySet="Abonents" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище TelecomNevaSvyazModelContainer" CdmEntityContainer="TelecomNevaSvyazEntities1">
+          <EntitySetMapping Name="AbonentEqupment">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.AbonentEqupment">
+              <MappingFragment StoreEntitySet="AbonentEqupment">
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EqupmentMagistral">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.EqupmentMagistral">
+              <MappingFragment StoreEntitySet="EqupmentMagistral">
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gender">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Request">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.Request">
+              <MappingFragment StoreEntitySet="Request">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NumberRequest" ColumnName="NumberRequest" />
+                <ScalarProperty Name="DateOfCreate" ColumnName="DateOfCreate" />
+                <ScalarProperty Name="PersonalAccount" ColumnName="PersonalAccount" />
+                <ScalarProperty Name="IDVidOfServices" ColumnName="IDVidOfServices" />
+                <ScalarProperty Name="IDTypeOfServices" ColumnName="IDTypeOfServices" />
+                <ScalarProperty Name="IDStatus" ColumnName="IDStatus" />
+                <ScalarProperty Name="TypeOfEqupment" ColumnName="TypeOfEqupment" />
+                <ScalarProperty Name="DescriptionProblem" ColumnName="DescriptionProblem" />
+                <ScalarProperty Name="DateOfEnd" ColumnName="DateOfEnd" />
+                <ScalarProperty Name="IDTypeOfProblem" ColumnName="IDTypeOfProblem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Role1" ColumnName="Role" />
+                <ScalarProperty Name="Information" ColumnName="Information" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SetiDostupa">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.SetiDostupa">
+              <MappingFragment StoreEntitySet="SetiDostupa">
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SPB">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.SPB">
+              <MappingFragment StoreEntitySet="SPB">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Ploshad" ColumnName="Ploshad" />
+                <ScalarProperty Name="Naselenie" ColumnName="Naselenie" />
+                <ScalarProperty Name="CountOfAnderground" ColumnName="CountOfAnderground" />
+                <ScalarProperty Name="IDTypeOfBuilding" ColumnName="IDTypeOfBuilding" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeOfBuilding">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.TypeOfBuilding">
+              <MappingFragment StoreEntitySet="TypeOfBuilding">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeOfDogovor">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.TypeOfDogovor">
+              <MappingFragment StoreEntitySet="TypeOfDogovor">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeOfProblem">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.TypeOfProblem">
+              <MappingFragment StoreEntitySet="TypeOfProblem">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeOfServices">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.TypeOfServices">
+              <MappingFragment StoreEntitySet="TypeOfServices">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VidOfServices">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.VidOfServices">
+              <MappingFragment StoreEntitySet="VidOfServices">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Abonents">
+            <EntityTypeMapping TypeName="TelecomNevaSvyazModel.Abonents">
+              <MappingFragment StoreEntitySet="Abonents">
+                <ScalarProperty Name="NumberAbonent" ColumnName="NumberAbonent" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AdressPropiski" ColumnName="AdressPropiski" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="SerialAndNumber" ColumnName="SerialAndNumber" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Issue" ColumnName="Issue" />
+                <ScalarProperty Name="DateOfIssue" ColumnName="DateOfIssue" />
+                <ScalarProperty Name="NumberOfDogovor" ColumnName="NumberOfDogovor" />
+                <ScalarProperty Name="DateOfStart" ColumnName="DateOfStart" />
+                <ScalarProperty Name="IDTypeOfDogovor" ColumnName="IDTypeOfDogovor" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="PersonalAccount" ColumnName="PersonalAccount" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+                <ScalarProperty Name="DateOfEnd" ColumnName="DateOfEnd" />
+                <ScalarProperty Name="IDAbonentEqupment" ColumnName="IDAbonentEqupment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
